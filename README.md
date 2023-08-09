@@ -10,8 +10,8 @@ A small unit testing library.
 
 `assert.equal(a, b)`
 
-Throws an `AssertionError` if the given values are not equal. Values are compared using the string equality operator (triple equals).
+Throws an `AssertionError` if the given values are not equal. Values are compared using the strict equality operator (triple equals).
 
 `assert.notEqual(a, b)`
 
-Throws an `AssertionError` if the given values are equal. Values are compared using the string equality operator (triple equals).
+Throws an `AssertionError` if the given values are equal. Values are compared using the strict equality operator (triple equals).
