@@ -27,11 +27,6 @@ export const assert = {
 			throw new AssertionError(`Expected ${a} and ${b} to have an equal reference. ${a} and ${b} do not have an equal reference.`);
 		}
 	},
-	equalType(a, b) {
-		if (typeof a !== typeof b) {
-			throw new AssertionError(`Expected ${a} and ${b} to have the same type. ${a} and ${b} do not have the same type.`);
-		}
-	},
 	// deepEqual(a, b) {},
 	less(a, b) {
 		if (a >= b) {
@@ -61,10 +56,15 @@ export const assert = {
 			throw new AssertionError(`Value is out of bounds. Expected value ${value} to be trapped between the lower bound ${lowerBound} and the upper bound ${excludedUpperBound}.`);
 		}
 	},
+	equalType(a, b) {
+		if (typeof a !== typeof b) {
+			throw new AssertionError(`Expected ${a} and ${b} to be of the same type. Types "${typeof a}" and "${typeof b}" do not match.`);
+		}
+	},
 	type(value, type) {
 		// deno-lint-ignore valid-typeof
 		if (typeof value !== type) {
-			throw new AssertionError(`Expected ${value} to be of type ${type}. ${value} has type ${typeof value} which is not equal to ${type}.`);
+			throw new AssertionError(`Expected ${value} to be of type ${type}. ${value} has type "${typeof value}" which does not match type "${type}".`);
 		}
 	},
 	true(value) {
