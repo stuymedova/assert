@@ -1,3 +1,5 @@
+import { areDeepEqual } from './utils/areDeepEqual.js';
+
 class AssertionError extends Error {
 	constructor(message) {
 		super(message);
@@ -8,12 +10,12 @@ class AssertionError extends Error {
 export const assert = {
 	equal(a, b) {
 		if (a !== b) {
-			throw new AssertionError(`Expected equality for ${a} and ${b}. ${a} and ${b} are not equal.`);
+			throw new AssertionError(`Expected ${a} and ${b} to be equal. ${a} and ${b} are not equal.`);
 		}
 	},
 	notEqual(a, b) {
 		if (a === b) {
-			throw new AssertionError(`Expected inequality for ${a} and ${b}. ${a} and ${b} are equal.`);
+			throw new AssertionError(`Expected ${a} and ${b} to not be equal. ${a} and ${b} are equal.`);
 		}
 	},
 	equalReference(a, b) {
@@ -27,7 +29,17 @@ export const assert = {
 			throw new AssertionError(`Expected ${a} and ${b} to have an equal reference. ${a} and ${b} do not have an equal reference.`);
 		}
 	},
-	// deepEqual(a, b) {},
+	deepEqual(a, b) {
+		if (!(a instanceof Object)) {
+			throw new AssertionError(`Expected ${a} to be an Object. ${a} is not an Object.`);
+		}
+		if (!(b instanceof Object)) {
+			throw new AssertionError(`Expected ${b} to be an Object. ${b} is not an Object.`);
+		}
+		if (!areDeepEqual(a, b)) {
+			throw new AssertionError(`Expected ${a} and ${b} to be deeply equal. ${a} and ${b} are not deeply equal.`);
+		}
+	},
 	less(a, b) {
 		if (a >= b) {
 			throw new AssertionError(`Expected ${a} to be less than ${b}. ${a} is greater than or equal to ${b}.`);

@@ -20,9 +20,9 @@ Throws an `AssertionError` if the given values are equal. Values are compared us
 
 Throws an `AssertionError` if the given variables do not referce the same object.
 
-<!-- **`assert.deepEqual(a, b)`**
+**`assert.deepEqual(a, b)`**
 
-Throws an `AssertionError` if the given object are not deeply equal (thay have the same number of key-value pairs, and all of them match). -->
+Throws an `AssertionError` if the given objects (incl. arrays) are not deeply equal (thay have the same number of key-value pairs, and all of them match).
 
 **`assert.less(a, b)`**
 
@@ -54,8 +54,8 @@ Throws an `AssertionError` if the given value's type does not match the given ty
 
 **`assert.true(value)`**
 
-Throws an `AssertionError` if the given value is not true.
+Throws an `AssertionError` if the given value is not `true`.
 
 **`assert.false(value)`**
 
-Throws an `AssertionError` if the given value is not false.
+Throws an `AssertionError` if the given value is not `false`.
