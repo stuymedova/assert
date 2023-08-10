@@ -2,9 +2,22 @@
 
 A small unit testing library.
 
-<!-- ### Installation
+## Installation and Usage
 
-### Usage -->
+**Installation**
+
+To add the library to a project, run:
+```shell
+npm i @stuymedova/assert
+```
+
+**Usage**
+
+```js
+import { assert } from '@stuymedova/assert';
+
+assert.equal('hello', 'world'); // Throws an AssertionError
+```
 
 ## API
 

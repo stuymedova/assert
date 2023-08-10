@@ -1,3 +1,21 @@
 {
-	"type": "module"
+	"name": "@stuymedova/assert",
+	"description": "A small unit testing library",
+	"version": "1.0.0",
+	"main": "index.js",
+	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/stuymedova/assert.git"
+	},
+	"keywords": [
+		"unit-testing",
+		"testing",
+		"test-suite"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/stuymedova/assert/issues"
+	},
+	"homepage": "https://github.com/stuymedova/assert#readme"
 }
