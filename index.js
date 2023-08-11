@@ -8,56 +8,56 @@ class AssertionError extends Error {
 }
 
 export const assert = {
-	equal(a, b) {
-		if (a !== b) {
-			throw new AssertionError(`Expected ${a} and ${b} to be equal. ${a} and ${b} are not equal.`);
+	equal(actual, expected) {
+		if (actual !== expected) {
+			throw new AssertionError(`Expected ${actual} and ${expected} to be equal. ${actual} and ${expected} are not equal.`);
 		}
 	},
-	notEqual(a, b) {
-		if (a === b) {
-			throw new AssertionError(`Expected ${a} and ${b} to not be equal. ${a} and ${b} are equal.`);
+	notEqual(actual, expected) {
+		if (actual === expected) {
+			throw new AssertionError(`Expected ${actual} and ${expected} to not be equal. ${actual} and ${expected} are equal.`);
 		}
 	},
-	equalReference(a, b) {
-		if (!(a instanceof Object)) {
-			throw new AssertionError(`Expected ${a} to be an Object. ${a} is not an Object.`);
+	equalReference(actual, expected) {
+		if (!(actual instanceof Object)) {
+			throw new AssertionError(`Expected ${actual} to be an Object. ${actual} is not an Object.`);
 		}
-		if (!(b instanceof Object)) {
-			throw new AssertionError(`Expected ${b} to be an Object. ${b} is not an Object.`);
+		if (!(expected instanceof Object)) {
+			throw new AssertionError(`Expected ${expected} to be an Object. ${expected} is not an Object.`);
 		}
-		if (a !== b) {
-			throw new AssertionError(`Expected ${a} and ${b} to have an equal reference. ${a} and ${b} do not have an equal reference.`);
-		}
-	},
-	deepEqual(a, b) {
-		if (!(a instanceof Object)) {
-			throw new AssertionError(`Expected ${a} to be an Object. ${a} is not an Object.`);
-		}
-		if (!(b instanceof Object)) {
-			throw new AssertionError(`Expected ${b} to be an Object. ${b} is not an Object.`);
-		}
-		if (!areDeepEqual(a, b)) {
-			throw new AssertionError(`Expected ${a} and ${b} to be deeply equal. ${a} and ${b} are not deeply equal.`);
+		if (actual !== expected) {
+			throw new AssertionError(`Expected ${actual} and ${expected} to have an equal reference. ${actual} and ${expected} do not have an equal reference.`);
 		}
 	},
-	less(a, b) {
-		if (a >= b) {
-			throw new AssertionError(`Expected ${a} to be less than ${b}. ${a} is greater than or equal to ${b}.`);
+	deepEqual(actual, expected) {
+		if (!(actual instanceof Object)) {
+			throw new AssertionError(`Expected ${actual} to be an Object. ${actual} is not an Object.`);
+		}
+		if (!(expected instanceof Object)) {
+			throw new AssertionError(`Expected ${expected} to be an Object. ${expected} is not an Object.`);
+		}
+		if (!areDeepEqual(actual, expected)) {
+			throw new AssertionError(`Expected ${actual} and ${expected} to be deeply equal. ${actual} and ${expected} are not deeply equal.`);
 		}
 	},
-	lessOrEqual(a, b) {
-		if (a > b) {
-			throw new AssertionError(`Expected ${a} to be less than or equal to ${b}. ${a} is greater than ${b}.`);
+	less(actual, expected) {
+		if (actual >= expected) {
+			throw new AssertionError(`Expected ${actual} to be less than ${expected}. ${actual} is greater than or equal to ${expected}.`);
 		}
 	},
-	greater(a, b) {
-		if (a <= b) {
-			throw new AssertionError(`Expected ${a} to be greater than ${b}. ${a} is less than or equal to ${b}.`);
+	lessOrEqual(actual, expected) {
+		if (actual > expected) {
+			throw new AssertionError(`Expected ${actual} to be less than or equal to ${expected}. ${actual} is greater than ${expected}.`);
 		}
 	},
-	greaterOrEqual(a, b) {
-		if (a < b) {
-			throw new AssertionError(`Expected ${a} to be greater than or equal to ${b}. ${a} is less than ${b}.`);
+	greater(actual, expected) {
+		if (actual <= expected) {
+			throw new AssertionError(`Expected ${actual} to be greater than ${expected}. ${actual} is less than or equal to ${expected}.`);
+		}
+	},
+	greaterOrEqual(actual, expected) {
+		if (actual < expected) {
+			throw new AssertionError(`Expected ${actual} to be greater than or equal to ${expected}. ${actual} is less than ${expected}.`);
 		}
 	},
 	trapped(value, lowerBound, excludedUpperBound) {
@@ -68,15 +68,15 @@ export const assert = {
 			throw new AssertionError(`Value is out of bounds. Expected value ${value} to be trapped between the lower bound ${lowerBound} and the upper bound ${excludedUpperBound}.`);
 		}
 	},
-	equalType(a, b) {
-		if (typeof a !== typeof b) {
-			throw new AssertionError(`Expected ${a} and ${b} to be of the same type. Types "${typeof a}" and "${typeof b}" do not match.`);
+	equalType(actual, expected) {
+		if (typeof actual !== typeof expected) {
+			throw new AssertionError(`Expected ${actual} and ${expected} to be of the same type. Types "${typeof actual}" and "${typeof expected}" do not match.`);
 		}
 	},
-	type(value, type) {
+	type(actual, expected) {
 		// deno-lint-ignore valid-typeof
-		if (typeof value !== type) {
-			throw new AssertionError(`Expected ${value} to be of type ${type}. ${value} has type "${typeof value}" which does not match type "${type}".`);
+		if (typeof actual !== expected) {
+			throw new AssertionError(`Expected ${actual} to be of type ${expected}. ${actual} has type "${typeof actual}" which does not match type "${expected}".`);
 		}
 	},
 	true(value) {

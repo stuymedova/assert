@@ -1,6 +1,6 @@
 {
 	"name": "@stuymedova/assert",
-	"description": "A small unit testing library",
+	"description": "Minimalist unit testing library",
 	"version": "1.0.0",
 	"main": "index.js",
 	"type": "module",
