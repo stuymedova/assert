@@ -1,6 +1,6 @@
 # Assert
 
-Minimalist unit testing library.
+A small unit testing library.
 
 ## Installation and Usage
 
@@ -21,35 +21,35 @@ assert.equal('hello', 'world'); // Throws an AssertionError
 
 ## API
 
-**`assert.equal(a, b)`**
+**`assert.equal(a, ctualb)expected**
 
 Throws an `AssertionError` if the given values are not equal. Values are compared using the strict equality operator (triple equals).
 
-**`assert.notEqual(a, b)`**
+**`assert.notEqual(actual, expected)`**
 
 Throws an `AssertionError` if the given values are equal. Values are compared using the strict equality operator (triple equals).
 
-**`assert.equalReference(a, b)`**
+**`assert.equalReference(actual, expected)`**
 
 Throws an `AssertionError` if the given variables do not referce the same object.
 
-**`assert.deepEqual(a, b)`**
+**`assert.deepEqual(actual, expected)`**
 
 Throws an `AssertionError` if the given objects (incl. arrays) are not deeply equal (thay have the same number of key-value pairs, and all of them match).
 
-**`assert.less(a, b)`**
+**`assert.less(actual, expected)`**
 
 Throws an `AssertionError` if the first passed value is greater than or equal to the second value.
 
-**`assert.lessOrEqual(a, b)`**
+**`assert.lessOrEqual(actual, expected)`**
 
 Throws an `AssertionError` if the first passed value is greater than the second value.
 
-**`assert.greater(a, b)`**
+**`assert.greater(actual, expected)`**
 
 Throws an `AssertionError` if the first passed value is less than or equal to the second value.
 
-**`assert.greaterOrEqual(a, b)`**
+**`assert.greaterOrEqual(actual, expected)`**
 
 Throws an `AssertionError` if the first passed value is less than the second value.
 
@@ -57,11 +57,11 @@ Throws an `AssertionError` if the first passed value is less than the second val
 
 Throws an `AssertionError` if the given value is not within bounds or if the precondition is not satisfied (lower bound must be greater than the upper bound).
 
-**`assert.equalType(a, b)`**
+**`assert.equalType(actual, expected)`**
 
 Throws an `AssertionError` if the given values are not of the same type.
 
-**`assert.type(value, type)`**
+**`assert.type(value, expectedType)`**
 
 Throws an `AssertionError` if the given value's type does not match the given type.
 

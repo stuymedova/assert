@@ -73,10 +73,10 @@ export const assert = {
 			throw new AssertionError(`Expected ${actual} and ${expected} to be of the same type. Types "${typeof actual}" and "${typeof expected}" do not match.`);
 		}
 	},
-	type(actual, expected) {
+	type(value, expectedType) {
 		// deno-lint-ignore valid-typeof
-		if (typeof actual !== expected) {
-			throw new AssertionError(`Expected ${actual} to be of type ${expected}. ${actual} has type "${typeof actual}" which does not match type "${expected}".`);
+		if (typeof value !== expectedType) {
+			throw new AssertionError(`Expected ${value} to be of type ${expectedType}. ${value} has type "${typeof value}" which does not match type "${expectedType}".`);
 		}
 	},
 	true(value) {
