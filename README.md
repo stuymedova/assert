@@ -1,6 +1,6 @@
 # Assert
 
-A small unit testing library.
+Minimalist unit testing library.
 
 ## Installation and Usage
 
