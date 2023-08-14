@@ -21,7 +21,7 @@ assert.equal('hello', 'world'); // Throws an AssertionError
 
 ## API
 
-**`assert.equal(a, ctualb)expected**
+**`assert.equal(actual, expected)`**
 
 Throws an `AssertionError` if the given values are not equal. Values are compared using the strict equality operator (triple equals).
 
