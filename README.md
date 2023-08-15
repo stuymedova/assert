@@ -7,6 +7,7 @@ Minimalist unit testing library.
 **Installation**
 
 To add the library to a project, run:
+
 ```shell
 npm i @stuymedova/assert
 ```
@@ -14,9 +15,16 @@ npm i @stuymedova/assert
 **Usage**
 
 ```js
+// tests.js
 import { assert } from '@stuymedova/assert';
 
 assert.equal('hello', 'world'); // Throws an AssertionError
+```
+
+To check, run in console:
+
+```shell
+node tests.js
 ```
 
 ## API
